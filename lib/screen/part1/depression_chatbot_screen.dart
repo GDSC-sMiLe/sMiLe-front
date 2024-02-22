@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smile_front/screen/part1/result_screen.dart';
-import '../../chat/message.dart';
-import '../../chat/new_message.dart';
+import '../../chat/message_show.dart';
+import '../../chat/message_send.dart';
 
 class DepressionChatbotScreen extends StatefulWidget {
   const DepressionChatbotScreen({Key? key}) : super(key: key);

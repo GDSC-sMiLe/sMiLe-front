@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../chat/message.dart';
-import '../../chat/new_message.dart';
+import '../../chat/message_send.dart';
+import '../../chat/message_show.dart';
 
 class DailydialogueChatbotWidget extends StatefulWidget {
   final VoidCallback onToggleScreen;
