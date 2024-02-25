@@ -37,6 +37,7 @@ class _NewMessageState extends State<NewMessage> {
       'isUser': true,
       'time': Timestamp.now(),
     });
+    _sendChatRequest();
     _controller.clear();
   }
 
@@ -52,9 +53,13 @@ class _NewMessageState extends State<NewMessage> {
     } else {
       print('Failed to send chat request');
     }
-    print('Response: ${response.body}');
+    print('Response: ${jsonDecode(response.body)['text']}');
+    var chat_text = jsonDecode(response.body)['text'];
+    if (chat_text == null) {
+      chat_text = 'Sorry, I cannot understand...';
+    }
     FirebaseFirestore.instance.collection('chat').add({
-      'chat': jsonDecode(response.body)['response'],
+      'chat': chat_text,
       'isUser': false,
       'time': Timestamp.now(),
     });
